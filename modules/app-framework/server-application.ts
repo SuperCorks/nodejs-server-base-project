@@ -85,6 +85,8 @@ export class ServerApplication {
 
       this.isStarted = true;
 
+      console.log(`🚀 Server Started! Listening on port ${configs.httpPort}.`);
+
     } catch (e) {
 
       await this.stop();
@@ -140,11 +142,10 @@ export class ServerApplication {
 
     await new Promise((resolve, reject) => {
 
-      this.server.listen(port);
-
       this.server.on('error', reject);
-
       this.server.on('listening', resolve);
+
+      this.server.listen(port);
     });
   }
 }
