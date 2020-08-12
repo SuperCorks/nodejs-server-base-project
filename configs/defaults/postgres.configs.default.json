@@ -1,0 +1,9 @@
+{
+  "host": "localhost",
+  "database": "replace-with-your-database-name-here",
+  "credentials": {
+    "username": "replace-with-your-username-here",
+    "password": "replace-with-your-password-here"
+  },
+  "port": 5432
+}

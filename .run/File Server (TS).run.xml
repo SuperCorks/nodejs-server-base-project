@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="File Server (TS)" type="NodeJSConfigurationType" path-to-node="$PROJECT_DIR$/../../../../Program Files/nodejs/node" node-parameters="--require ts-node/register" path-to-js-file="apps/file-server-app/app.ts" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>

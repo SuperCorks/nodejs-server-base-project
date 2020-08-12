@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Play" type="NodeJSConfigurationType" path-to-node="$PROJECT_DIR$/../../../../Program Files/nodejs/node" path-to-js-file="playground.js" working-dir="$PROJECT_DIR$">
+    <method v="2" />
+  </configuration>
+</component>

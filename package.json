@@ -1,0 +1,35 @@
+{
+  "name": "server-app",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "echo \"Error: No run config yet!\" && exit 1",
+    "test": "echo \"Error: No test config yet!\" && exit 1"
+  },
+  "dependencies": {
+    "soulmate": "file:modules",
+    "ws": "latest",
+    "cors": "latest",
+    "https": "latest",
+    "multer": "latest",
+    "express": "latest",
+    "request": "latest",
+    "body-parser": "latest",
+    "cookie-parser": "latest"
+  },
+  "devDependencies": {
+    "chai": "latest",
+    "mocha": "latest",
+    "sinon": "latest",
+    "ts-node": "latest",
+    "ts-mocha": "latest",
+    "node-fetch": "latest",
+    "typescript": "latest",
+    "@types/sinon": "latest",
+    "@types/mocha": "latest",
+    "@types/express": "latest",
+    "@types/request": "latest",
+    "@types/mongoose": "latest",
+    "chai-as-promised": "latest",
+    "@types/chai-as-promised": "latest"
+  }
+}

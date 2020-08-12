@@ -1,3 +1,30 @@
+#All configs (except for the defaults/templates)
+configs/*
+!configs/defaults/*
+
+#playground
+playground.js
+
+# TypeScript build folder
+build/
+
+# Jetbrains IDEs
+.projectile
+.tern-port
+.idea
+*.sw[p]
+
+# VS Code
+# ignore vs-code configs
+.vscode
+# except for launch.json
+!.vscode/launch.json
+
+
+# ---------------------------------------
+# Default npm ignores below
+# ---------------------------------------
+
 # Logs
 logs
 *.log
