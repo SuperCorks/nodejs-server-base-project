@@ -1,16 +1,22 @@
 import {BaseError} from "../../base-error";
-import {assert, expect} from "soulmate/test-utils";
-
+const {assert, expect} = require("soulmate/test-utils");
 
 describe('unit: errors/BaseError', () => {
 
     it(`should be an instance of Error`, assertInstanceOfErrorClass);
     it(`should contain the stack information of its innerError`, assertContainsInnerInErrorStack);
     it(`should identify child classes as instances of BaseError in a catch clause`, assertChildClassInstanceOfBaseError)
+    it(`should conserve the methods of the child classes`, assertConservesChildMethods)
 });
 
-function assertInstanceOfErrorClass() {
+class ChildError extends BaseError {
+    childMethod() {}
+}
+class GrandChildError extends ChildError {
+    grandChildMethod() {}
+}
 
+function assertInstanceOfErrorClass() {
     assertInstanceOfInCatch(BaseError, Error);
 }
 
@@ -26,11 +32,9 @@ function assertContainsInnerInErrorStack() {
     }
 }
 
-class ChildError extends BaseError {}
 
 function assertChildClassInstanceOfBaseError() {
 
-    assertInstanceOfInCatch(ChildError, Error);
     assertInstanceOfInCatch(ChildError, BaseError);
     assertInstanceOfInCatch(ChildError, ChildError);
 }
@@ -41,4 +45,10 @@ function assertInstanceOfInCatch(errorToThrow: new () => BaseError, expectedErro
         assert(caughtError instanceof expectedErrorClass,
             `${errorToThrow.name} is not an instance of ${expectedErrorClass.name} in a catch clause!`);
     }
+}
+
+function assertConservesChildMethods() {
+    let error = new GrandChildError();
+    expect(error.childMethod).to.exist;
+    expect(error.grandChildMethod).to.exist;
 }
